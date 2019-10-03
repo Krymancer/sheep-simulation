@@ -9,7 +9,7 @@ export default class Sheep {
             speed: 4,
             move: 1,
             energy: 5,
-            reproduction: 40
+            reproduction: 120
         }
 
         if (random(0, 100) < 20) {
@@ -25,7 +25,7 @@ export default class Sheep {
     }
 
     reproduce() {
-        if (this.dna.energy > this.dna.reproduction) {
+        if ((this.dna.energy > this.dna.reproduction) && (random(0, 100) < 50)) {
             this.dna.energy -= this.dna.reproduction;
             return true;
         }
@@ -68,7 +68,7 @@ export default class Sheep {
         let y = Math.floor(this.y / (this.size * 2));
         if (food[x] !== undefined && food[x][y] !== undefined) {
             if (!food[x][y].eaten) {
-                this.dna.energy += 10;
+                this.dna.energy += 5;
                 food[x][y].eated();
             }
         }

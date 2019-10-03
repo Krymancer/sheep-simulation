@@ -30,7 +30,7 @@ for(let i=0;i<POPULATION;i++){
     sheeps.push(new Sheep(x,y,TILE_SIZE/2));
 }
 
-function update(timestamp){
+function update(){
     context.fillStyle = 'black';
     context.fillRect(0,0,FRAME_SIZE,FRAME_SIZE);
 
